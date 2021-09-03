@@ -16,24 +16,24 @@ body {
   --color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color);
-  background-color: #d16161;
+  background-color: #583a70;
   background-image: radial-gradient(
       circle closest-side,
-      #d16161 61%,
+      #583a70 61%,
       transparent 62%
     ),
     radial-gradient(
       circle closest-side,
       transparent 85%,
-      #db6666 86%,
-      #db6666 99%,
+      #63437c 86%,
+      #63437c 99%,
       transparent 100%
     ),
     radial-gradient(
       circle closest-side,
       transparent 85%,
-      #db6666 86%,
-      #db6666 99%,
+      #63437c 86%,
+      #63437c 99%,
       transparent 100%
     );
   background-size: 60px 60px, 60px 30px, 30px 60px;
@@ -44,7 +44,7 @@ h1 {
     font-family: 'Righteous', cursive;
     letter-spacing: .2em;
     font-size: 5em;
-    text-shadow: #e7776f 2px 2px 0px, #1e345e 4px 4px 0px;
+    text-shadow: #3a5081 2px 2px 0px, #46103e 4px 4px 0px;
     margin: 0;
     padding: 0;
     padding-bottom: .2em;
@@ -71,8 +71,8 @@ header {
 }
 
 .grid {
-    background-color: #d16161;
-    box-shadow: inset 0px 7px 7px -6px rgba(150,0,0,0.57);
+    background-color: #80a6d1;
+    box-shadow: inset 0px 7px 7px -6px #18284b;
 }
 
 .grid {
@@ -106,29 +106,23 @@ header {
 }
 
 .button {
-  background-color: #642727; /* Green */
+  background-color: #273a64; /* Green */
   font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
   border: none;
-  color: white;
+  color: #80a6d1;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  box-shadow: 0px 7px 7px -6px rgba(150,0,0,0.57);
+  box-shadow: 0px 2px 2px 1px #18284b;
 }
 
 .button:hover {
-  background-color: #fff; /* Green */
-  font-family: "Courier New", Courier, monospace;
-  border: none;
-  color: #642727;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  box-shadow: 0px 7px 7px -6px rgba(150,0,0,0.57);
+  background-color: #80a6d1;
+  color: #050c1d;
+  box-shadow: 0px 2px 2px 1px #18284b;
 }
 
 .up {
