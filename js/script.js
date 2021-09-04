@@ -34,3 +34,23 @@
  const noteElement = document.querySelector("footer");
  const contrastElement = document.querySelector(".contrast");
  const scoreElement = document.querySelector(".score");
+
+ const upButton = document.getElementById("up");
+ upButton.addEventListener('click', () => {
+   console.log("UP Pressed");
+ });
+
+ const leftButton = document.getElementById("left");
+ leftButton.addEventListener('click', () => {
+   console.log("LEFT Pressed");
+ }); 
+
+ const downButton = document.getElementById("down");
+ downButton.addEventListener('click', () => {
+   console.log("DOWN Pressed");
+ });
+
+ const rightButton = document.getElementById("right");
+ rightButton.addEventListener('click', () => {
+   console.log("RIGHT Pressed");
+ });
