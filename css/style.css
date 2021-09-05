@@ -77,8 +77,8 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(20, auto);
-  grid-template-rows: repeat(20, auto);
+  grid-template-columns: repeat(15, auto);
+  grid-template-rows: repeat(15, auto);
   border: var(--size) solid var(--color);
 }
 
