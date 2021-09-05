@@ -20,6 +20,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
   const width = 15; // Grid width
   const height = 15; // Grid height
 
+  const startbutton = document.querySelector(".start");
+
   const upbutton = document.querySelector(".up");
   const downbutton = document.querySelector(".down");
   const leftbutton = document.querySelector(".left");
@@ -53,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
 
   const tiles = document.querySelectorAll(".grid .tile .content");
 
-  const containerElement = document.querySelector(".container");
+  const containerElement = document.querySelector(".grid");
   const noteElement = document.querySelector("footer");
   const contrastElement = document.querySelector(".fadeout");
   const scoreElement = document.querySelector(".score");
@@ -132,6 +134,11 @@ window.addEventListener("DOMContentLoaded", function (event) {
     event.preventDefault();
 
     // If space was pressed restart the game
+    startbutton.addEventListener("click", (event) => {
+      resetGame();
+      startGame();
+      return;
+    });
     if (event.key == " ") {
       resetGame();
       startGame();
@@ -300,7 +307,10 @@ window.addEventListener("DOMContentLoaded", function (event) {
     } catch (error) {
       // Write a note about restarting game and setting difficulty
       const pressSpaceToStart = "Press space to reset the game.";
-      noteElement.innerHTML = `${error.message}. ${pressSpaceToStart}`;
+      const changeMode = hardMode
+        ? "Back to easy mode? Press the letter E."
+        : "Ready for hard more? Press the letter H.";
+      noteElement.innerHTML = `${error.message}. ${pressSpaceToStart} <div>${changeMode}</div>`;
       noteElement.style.opacity = 1;
       containerElement.style.opacity = 1;
     }

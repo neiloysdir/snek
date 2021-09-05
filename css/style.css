@@ -41,13 +41,13 @@ body {
 }
 
 h1 {
-    font-family: 'Righteous', cursive;
-    letter-spacing: .2em;
-    font-size: 5em;
-    text-shadow: #3a5081 2px 2px 0px, #46103e 4px 4px 0px;
-    margin: 0;
-    padding: 0;
-    padding-bottom: .2em;
+  font-family: "Righteous", cursive;
+  letter-spacing: 0.2em;
+  font-size: 5em;
+  text-shadow: #3a5081 2px 2px 0px, #46103e 4px 4px 0px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.2em;
 }
 
 footer {
@@ -71,8 +71,9 @@ header {
 }
 
 .grid {
-    background-color: #80a6d1;
-    box-shadow: inset 0px 7px 7px -6px #18284b;
+  z-index: 1;
+  background-color: #80a6d1;
+  box-shadow: inset 0px 7px 7px -6px #18284b;
 }
 
 .grid {
@@ -101,7 +102,7 @@ header {
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 0.5em;
   grid-template-areas:
-    "temp1 up temp2"
+    "start up temp2"
     "left down right";
 }
 
@@ -120,6 +121,12 @@ header {
 }
 
 .button:hover {
+  background-color: #80a6d1;
+  color: #050c1d;
+  box-shadow: 0px 2px 2px 1px #18284b;
+}
+
+.start {
   background-color: #80a6d1;
   color: #050c1d;
   box-shadow: 0px 2px 2px 1px #18284b;
