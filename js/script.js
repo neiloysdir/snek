@@ -1,6 +1,13 @@
 window.addEventListener("DOMContentLoaded", function (event) {
   window.focus(); // Capture keys right away (by default focus is on editor)
 
+  const startbutton = document.getElementById("start");
+
+  const upbutton = document.getElementById("up");
+  const downbutton = document.getElementById("down");
+  const leftbutton = document.getElementById("left");
+  const rightbutton = document.getElementById("right");
+
   // Game data
   let snakePositions; // An array of snake positions, starting head first
   let applePosition; // The position of the apple
@@ -19,13 +26,6 @@ window.addEventListener("DOMContentLoaded", function (event) {
   // configuring board
   const width = 15; // Grid width
   const height = 15; // Grid height
-
-  const startbutton = document.querySelector(".start");
-
-  const upbutton = document.querySelector(".up");
-  const downbutton = document.querySelector(".down");
-  const leftbutton = document.querySelector(".left");
-  const rightbutton = document.querySelector(".right");
 
   const speed = 200; // time it takes in miliseconds for the snake to take a step in the grid
   let fadeSpeed = 5000; // time it takes in miliseconds the grid to disappear (initially)
@@ -105,6 +105,47 @@ window.addEventListener("DOMContentLoaded", function (event) {
   }
 
   // Handle user inputs (e.g. start the game)
+
+  // Touch Inputs
+  startbutton.addEventListener("click", (event) => {
+    resetGame();
+    startGame();
+    return;
+  });
+
+  leftbutton.addEventListener("click", (event) => {
+    console.log("Left");
+    if (inputs[inputs.length - 1] != "left" && headDirection() != "right") {
+      inputs.push("left");
+      if (!gameStarted) startGame();
+      return;
+    }
+  });
+  upbutton.addEventListener("click", (event) => {
+    console.log("Up");
+    if (inputs[inputs.length - 1] != "up" && headDirection() != "down") {
+      inputs.push("up");
+      if (!gameStarted) startGame();
+      return;
+    }
+  });
+  rightbutton.addEventListener("click", (event) => {
+    console.log("Right");
+    if (inputs[inputs.length - 1] != "right" && headDirection() != "left") {
+      inputs.push("right");
+      if (!gameStarted) startGame();
+      return;
+    }
+  });
+  downbutton.addEventListener("click", (event) => {
+    console.log("Down");
+    if (inputs[inputs.length - 1] != "down" && headDirection() != "up") {
+      inputs.push("down");
+      if (!gameStarted) startGame();
+      return;
+    }
+  });
+
   window.addEventListener("keydown", function (event) {
     // If not an arrow key or space or H was pressed then return
     if (
@@ -134,11 +175,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     event.preventDefault();
 
     // If space was pressed restart the game
-    startbutton.addEventListener("click", (event) => {
-      resetGame();
-      startGame();
-      return;
-    });
+
     if (event.key == " ") {
       resetGame();
       startGame();
@@ -171,35 +208,6 @@ window.addEventListener("DOMContentLoaded", function (event) {
     // Do not allow to add the same direction twice consecutively
     // The snake can't do a full turn either
     // Also start the game if it hasn't started yet
-
-    leftbutton.addEventListener("click", (event) => {
-      if (inputs[inputs.length - 1] != "left" && headDirection() != "right") {
-        inputs.push("left");
-        if (!gameStarted) startGame();
-        return;
-      }
-    });
-    upbutton.addEventListener("click", (event) => {
-      if (inputs[inputs.length - 1] != "up" && headDirection() != "down") {
-        inputs.push("up");
-        if (!gameStarted) startGame();
-        return;
-      }
-    });
-    rightbutton.addEventListener("click", (event) => {
-      if (inputs[inputs.length - 1] != "right" && headDirection() != "left") {
-        inputs.push("right");
-        if (!gameStarted) startGame();
-        return;
-      }
-    });
-    downbutton.addEventListener("click", (event) => {
-      if (inputs[inputs.length - 1] != "down" && headDirection() != "up") {
-        inputs.push("down");
-        if (!gameStarted) startGame();
-        return;
-      }
-    });
 
     if (
       (event.key == "ArrowLeft" || event.key == "A" || event.key == "a") &&
