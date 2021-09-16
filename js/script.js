@@ -314,10 +314,10 @@ window.addEventListener("DOMContentLoaded", function (event) {
       window.requestAnimationFrame(main);
     } catch (error) {
       // Write a note about restarting game and setting difficulty
-      const pressSpaceToStart = "Press space to reset the game.";
+      const pressSpaceToStart = "Press space or the start button to reset the game.";
       const changeMode = hardMode
-        ? "Back to easy mode? Press the letter E."
-        : "Ready for hard more? Press the letter H.";
+        ? " "
+        : " ";
       noteElement.innerHTML = `${error.message}. ${pressSpaceToStart} <div>${changeMode}</div>`;
       noteElement.style.opacity = 1;
       containerElement.style.opacity = 1;
